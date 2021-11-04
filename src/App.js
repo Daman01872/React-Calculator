@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import "./App.css";
+import Footer from './Project2/Footer';
+import Header from './Project2/Header';
+import Input from './Project2/Input';
+import Output from './Project2/Output';
+import MainComponent from './ReactAddSubtractProject/MainComponent';
+
 
 function App() {
+const[result,setResult]= useState([])
+
+function AddResults(input){
+setResult([
+  ...result,input
+])
+}
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/*====================== Assignment_1===================== */}
+  {/* <MainComponent/> */}
+  
+   {/*====================== Assignment_2===================== */}
+
+   <Header/>
+   <Input AddResults={AddResults}/>
+   <Output result={result}/>
+   <Footer/>
+  
     </div>
   );
 }
